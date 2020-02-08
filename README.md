@@ -1,2 +1,2 @@
-# Final_Project_SMU
-Final Project for SMU Coding Bootcamp
+# Say What!?
+Say What chat translation application
