@@ -5,6 +5,7 @@
   border-bottom: solid 1px #e8e8e8;
   overflow: auto;
   box-shadow: 0 0 30px #f3f1f1;
+  background-color: black;
 }
 
 .menu__logo {
@@ -29,6 +30,9 @@
 .menu__container .ant-menu-item a,
 .menu__container .ant-menu-submenu-title a {
   padding: 10px 15px;
+  margin-top: 30px;
+  color: red;
+  background-color: black;
 }
 
 .menu__container .ant-menu-horizontal {
@@ -42,31 +46,48 @@
 .menu__container .menu_rigth {
   float: right;
 }
+li{
+  background-color: black;
+}
 
 .menu__mobile-button {
   float: right;
-  height: 32px;
+  height: 60px;
+  width: 60px;
   padding: 6px;
-  margin-top: 8px;
+  margin-top: 30px;
   display: none !important; /* use of important to overwrite ant-btn */
-  background: #3e91f7;
+  background: red;
 }
 
 .menu_drawer .ant-drawer-body {
   padding: 0 !important;
+  background-color: black;
+  color: red;
+}
+.menu_drawer .ant-drawer-wrapper-body{
+  background-color: black;
+}
+.menu_drawer .ant-drawer-body a{
+  background-color: black;
 }
 
 /* align header of Drawer with header of page */
 .menu_drawer .ant-drawer-header {
   padding: 14px 24px !important;
+  background-color: black;
 }
 
 @media (max-width: 767px) {
   .menu__mobile-button {
     display: inline-block !important;
+    background-color: red;
+    outline-color: red;
   }
 
-  .menu_left,
+.ant-menu-item-active{
+  color:white;
+}
   .menu_rigth {
     display: none;
   }
@@ -78,9 +99,13 @@
   .menu__container .ant-menu-item,
   .menu__container .ant-menu-submenu-title {
     padding: 1px 20px;
+    background-color: black;
   }
 
   .menu__logo a {
     padding: 10px 20px;
+  }
+  .ant-menu-item{
+    background-color: black;
   }
 }

@@ -8,12 +8,14 @@ import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import ChatPage from "./views/ChatPage/ChatPage"
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
+var bodyParser = require('body-parser');
+App(bodyParser());
 
 function App() {
   return (
     <Suspense fallback={(<div>Loading...</div>)}>
       <NavBar />
-      <div className="content_wrapper" style={{ paddingTop: '75px', minHeight: 'calc(100vh - 80px)' }}>
+      <div className="content_wrapper" style={{ paddingTop: '75px', minHeight: 'calc(100vh - 80px)', backgroundColor: 'black' }}>
         <Switch>
           <Route exact path="/" component={Auth(LandingPage, null)} />
           <Route exact path="/chat" component={Auth(ChatPage, null)} />

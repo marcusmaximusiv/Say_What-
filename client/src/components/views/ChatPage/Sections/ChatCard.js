@@ -4,7 +4,7 @@ import { Comment, Tooltip, Avatar } from 'antd';
 
 function ChatCard(props) {
     return (
-        <div style={{ width: '100%' }}>
+        <div style={{ width: 'auto' }}>
             <Comment
                 author={props.sender.name}
                 avatar={

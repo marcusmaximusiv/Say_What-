@@ -16,7 +16,7 @@ body {
   font-size: 14px;
   line-height: 1.5;
   color: #24292e;
-  background-color: #fff;
+  background-color:black;
 }
 
 .app {
@@ -25,6 +25,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: black;
+  color: red;
+}
+#footer{
+  background-color: black;
+  color: red;
 }
 
 input.error {
@@ -36,4 +42,18 @@ input.error {
   color: red;
   height: 5px;
   margin-top: -12px;
+}
+
+.app #land_logo{
+  animation: App-logo-spin infinite 5s linear;
+  height: 40vmin;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

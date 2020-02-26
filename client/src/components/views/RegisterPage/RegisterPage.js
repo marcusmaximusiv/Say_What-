@@ -89,7 +89,7 @@ function RegisterPage(props) {
           values,
           touched,
           errors,
-          dirty,
+          //dirty,
           isSubmitting,
           handleChange,
           handleBlur,
@@ -98,7 +98,7 @@ function RegisterPage(props) {
         } = props;
         return (
           <div className="app">
-            <h2>Sign up</h2>
+            <h2 style={{color:'red'}}>Sign up</h2>
             <Form style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} >
 
               <Form.Item required label="Name">
@@ -109,6 +109,7 @@ function RegisterPage(props) {
                   value={values.name}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  onReset={handleReset}
                   className={
                     errors.name && touched.name ? 'text-input error' : 'text-input'
                   }
@@ -126,6 +127,7 @@ function RegisterPage(props) {
                   value={values.lastName}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  onReset={handleReset}
                   className={
                     errors.lastName && touched.lastName ? 'text-input error' : 'text-input'
                   }
@@ -143,6 +145,7 @@ function RegisterPage(props) {
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  onReset={handleReset}
                   className={
                     errors.email && touched.email ? 'text-input error' : 'text-input'
                   }
@@ -160,6 +163,7 @@ function RegisterPage(props) {
                   value={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  onReset={handleReset}
                   className={
                     errors.password && touched.password ? 'text-input error' : 'text-input'
                   }
@@ -177,6 +181,8 @@ function RegisterPage(props) {
                   value={values.confirmPassword}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  onReset={handleReset}
+                  style={{color: 'red'}}
                   className={
                     errors.confirmPassword && touched.confirmPassword ? 'text-input error' : 'text-input'
                   }
@@ -187,7 +193,7 @@ function RegisterPage(props) {
               </Form.Item>
 
               <Form.Item {...tailFormItemLayout}>
-                <Button onClick={handleSubmit} type="primary" disabled={isSubmitting}>
+                <Button onClick={handleSubmit} type="danger" disabled={isSubmitting}>
                   Submit
                 </Button>
               </Form.Item>
