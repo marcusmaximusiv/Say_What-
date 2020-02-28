@@ -3,10 +3,6 @@ import { Form, Icon, Input, Button, Row, Col, } from 'antd';
 import io from "socket.io-client";
 import { connect } from "react-redux";
 import moment from "moment";
-import { getChats, afterPostMessage } from "../../../_actions/chat_actions"
-import ChatCard from "./Sections/ChatCard"
-import Dropzone from 'react-dropzone';
-import Axios from 'axios';
 
 export class ChatPage extends Component {
     state = {
@@ -16,18 +12,11 @@ export class ChatPage extends Component {
     componentDidMount() {
         let server = "http://localhost:5000";
 
-        this.props.dispatch(getChats());
-
         this.socket = io(server);
 
         this.socket.on("Output Chat Message", messageFromBackEnd => {
             console.log(messageFromBackEnd)
-            this.props.dispatch(afterPostMessage(messageFromBackEnd));
         })
-    }
-
-    componentDidUpdate() {
-        this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
     }
 
     hanleSearchChange = (e) => {
@@ -35,45 +24,6 @@ export class ChatPage extends Component {
             chatMessage: e.target.value
         })
     }
-
-    renderCards = () =>
-        this.props.chats.chats
-        && this.props.chats.chats.map(((chat) => (
-            <ChatCard key={chat._id}  {...chat} />
-        )));
-
-    onDrop = (files) => {
-        console.log(files)
-        let formData = new FormData;
-
-        const config = {
-            header: { 'content-type': 'multipart/form-data' }
-        }
-
-        formData.append("file", files[0])
-
-        Axios.post('api/chat/uploadfiles', formData, config)
-            .then(response => {
-                if (response.data.success) {
-                    let chatMessage = response.data.url
-                    let userId = this.props.user.userData._id
-                    let userName = this.props.user.userData.name;
-                    let userImage = this.props.user.userData.image;
-                    let nowTime = moment();
-                    let type = "VideoOrImage"
-
-                    this.socket.emit("Input Chat Message", {
-                        chatMessage,
-                        userId,
-                        userName,
-                        userImage,
-                        nowTime,
-                        type
-                    });
-                }
-            })
-    }
-
 
     submitChatMessage = (e) => {
         e.preventDefault();
@@ -83,7 +33,7 @@ export class ChatPage extends Component {
         let userName = this.props.user.userData.name;
         let userImage = this.props.user.userData.image;
         let nowTime = moment();
-        let type = "Text"
+        let type = "Image"
 
         this.socket.emit("Input Chat Message", {
             chatMessage,
@@ -99,11 +49,15 @@ export class ChatPage extends Component {
     render() {
         return (
             <React.Fragment>
-                <div style={{ paddingTop: '50px',maxWidth: 'auto', margin: '0 auto', backgroundColor: 'black' }}>
-                    <div className="infinite-container" style={{ height: 'auto', overflowY: 'scroll' }}>
-                        {this.props.chats && (
-                            this.renderCards()
-                        )}
+                <div>
+                    <p style={{ fontSize: '2rem', textAlign: 'center' }}> Real Time Chat</p>
+                </div>
+
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div className="infinite-container">
+                        {/* {this.props.chats && (
+                            <div>{this.renderCards()}</div>
+                        )} */}
                         <div
                             ref={el => {
                                 this.messagesEnd = el;
@@ -125,18 +79,7 @@ export class ChatPage extends Component {
                                 />
                             </Col>
                             <Col span={2}>
-                                <Dropzone onDrop={this.onDrop}>
-                                    {({ getRootProps, getInputProps }) => (
-                                        <section>
-                                            <div {...getRootProps()}>
-                                                <input {...getInputProps()} />
-                                                <Button>
-                                                    <Icon type="upload" />
-                                                </Button>
-                                            </div>
-                                        </section>
-                                    )}
-                                </Dropzone>
+
                             </Col>
 
                             <Col span={4}>
@@ -154,8 +97,7 @@ export class ChatPage extends Component {
 
 const mapStateToProps = state => {
     return {
-        user: state.user,
-        chats: state.chat
+        user: state.user
     }
 }
 
