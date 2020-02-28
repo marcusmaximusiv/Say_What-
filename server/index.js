@@ -41,12 +41,12 @@ var storage = multer.diskStorage({
   //   cb(null, true)
   // }
 })
- 
+
 var upload = multer({ storage: storage }).single("file")
 
-app.post("/api/chat/uploadfiles", auth ,(req, res) => {
+app.post("/api/chat/uploadfiles", auth, (req, res) => {
   upload(req, res, err => {
-    if(err) {
+    if (err) {
       return res.json({ success: false, err })
     }
     return res.json({ success: true, url: res.req.file.path });
@@ -59,24 +59,24 @@ io.on("connection", socket => {
 
     connect.then(db => {
       try {
-          let chat = new Chat({ message: msg.chatMessage, sender:msg.userId, type: msg.type })
+        let chat = new Chat({ message: msg.chatMessage, sender: msg.userId, type: msg.type })
 
-          chat.save((err, doc) => {
-            console.log(doc)
-            if(err) return res.json({ success: false, err })
+        chat.save((err, doc) => {
+          console.log(doc)
+          if (err) return res.json({ success: false, err })
 
-            Chat.find({ "_id": doc._id })
+          Chat.find({ "_id": doc._id })
             .populate("sender")
-            .exec((err, doc)=> {
+            .exec((err, doc) => {
 
-                return io.emit("Output Chat Message", doc);
+              return io.emit("Output Chat Message", doc);
             })
-          })
+        })
       } catch (error) {
         console.error(error);
       }
     })
-   })
+  })
 
 })
 

@@ -70,7 +70,6 @@ function LoginPage(props) {
           values,
           touched,
           errors,
-          dirty,
           isSubmitting,
           handleChange,
           handleBlur,
@@ -80,7 +79,7 @@ function LoginPage(props) {
         return (
           <div className="app">
 
-            <Title style={{color:'red'}}level={2}>Log In</Title>
+            <Title style={{ color: 'red' }} level={2}>Log In</Title>
             <form onSubmit={handleSubmit} style={{ width: '350px' }}>
 
               <Form.Item required>
@@ -92,6 +91,7 @@ function LoginPage(props) {
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  onReset={handleReset}
                   className={
                     errors.email && touched.email ? 'text-input error' : 'text-input'
                   }
@@ -110,6 +110,7 @@ function LoginPage(props) {
                   value={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  onReset={handleReset}
                   className={
                     errors.password && touched.password ? 'text-input error' : 'text-input'
                   }
@@ -124,7 +125,7 @@ function LoginPage(props) {
               )}
 
               <Form.Item>
-                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} style={{color: 'red'}} >Remember me</Checkbox>
+                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} style={{ color: 'red' }} >Remember me</Checkbox>
                 <a className="login-form-forgot" href="/reset_user" style={{ float: 'right', color: 'red' }}>
                   forgot password
                   </a>
@@ -133,7 +134,7 @@ function LoginPage(props) {
                     Log in
                 </Button>
                 </div>
-                Or <a href="/register" style={{color:'red'}}>register now!</a>
+                Or <a href="/register" style={{ color: 'red' }}>register now!</a>
               </Form.Item>
             </form>
           </div>
