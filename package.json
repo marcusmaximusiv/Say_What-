@@ -1,36 +1,49 @@
 {
-  "name": "react-chat-app",
+  "name": "react-app-simple-chat-app",
   "version": "1.0.0",
-  "description": "react blog",
+  "description": "This is a simple chat Application",
   "main": "index.js",
-  "engine": {
-    "node": "10.16.0",
-    "npm": "6.9.0"
-  },
   "scripts": {
-    "start": "node server/index.js",
-    "backend": "nodemon server/index.js",
-    "frontend": "npm run front --prefix client",
-    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development"
   },
-  "author": "John ahn",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anijitsahu/react-app-simple-chat-app.git"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^3.0.6",
-    "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.4.20",
-    "multer": "^1.4.2",
-    "react-devtools": "^4.4.0",
-    "react-dom": "^16.12.0",
-    "react-dropzone": "^10.1.10",
-    "react-redux": "^5.0.7",
-    "socket.io": "^2.2.0"
+  "bugs": {
+    "url": "https://github.com/anijitsahu/react-app-simple-chat-app/issues"
   },
+  "homepage": "https://github.com/anijitsahu/react-app-simple-chat-app#readme",
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.19.1"
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "socket.io-client": "^2.1.1",
+    "style-loader": "^0.23.1",
+    "uuid": "^3.3.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.10",
+    "morgan": "^1.9.1",
+    "react-scripts": "^3.4.0",
+    "socket.io": "^2.1.1"
   }
 }
