@@ -1,6 +1,6 @@
 ## Installation
 
-1. Clone the repository using `git clone https://github.com/anijitsahu/react-app-simple-chat-app.git` from `Git Bash / Command Prompt`
+1. Clone the repository 
 2. Navigate inside the directory by `cd react-app-simple-chat-app`
 3. Install all the necessary dependecies by using `npm install` 
 4. Navigate to the directory `cd server`
