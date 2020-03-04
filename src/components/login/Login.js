@@ -4,6 +4,7 @@ import axios from 'axios'
 // components
 import ErrorMessage from './ErrorMessage'
 import Loading from '../Loading'
+import Register from '../Register'
 
 // Constants
 import Constants from '../Constants'
@@ -133,7 +134,6 @@ class Login extends Component {
             <img src="images/logo.png" className="header-logo" />
           </div>
           <div className="login-title">Login</div>
-          <div className="register">Please <a href="test">Sign up</a> to login</div>
           {(showError == true) ? <ErrorMessage message={errorMessage} /> : ''}
 
           {(showLoading == true) ? <Loading />

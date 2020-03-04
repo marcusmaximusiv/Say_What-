@@ -22,9 +22,9 @@ router.post('/login', (req, res) => {
 	dbOps.connectDbAndRunQueries('login', req, res)
 })
 
-router.post('/register', (req, res) => {
+/*router.post('/register', (req, res) => {
 	dbOps.connectDbAndRunQueries('register', req, res)
-})
+})*/
 
 
 router.post('/getrooms/:id', (req, res) => {

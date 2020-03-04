@@ -9,6 +9,7 @@ const Message = ({ msgBody, timeSent, senderId, userInfo }) => {
   const allConstants = new Constants()
   return (
     <div className={(senderId == userInfo.userId) ? "msg my-msg": "msg room-msg"}>{msgBody}
+      <span className="translate"><a href=""><button>Translate</button></a></span>
       <span className="time-sent">{allConstants.formatDates(timeSent)}</span>
     </div>
   );
