@@ -12725,8 +12725,14 @@ object-assign
           /*placeholder for translation icon*/
           o.a.createElement(
             "button",
-            { className: "translate" },
-            "hi"
+            { 
+            href: "#",
+            className: "translate",
+            onClick: function() {
+                //do google translate here
+                location.reload();
+              } },
+            "translate"
           ),
           o.a.createElement(
             "span",
