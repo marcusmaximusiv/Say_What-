@@ -62,7 +62,7 @@ class WriteMessage extends Component {
       // define the chat message
       let data = {
         timeSent: new Date().toISOString(),
-        msgBody: this.state.message.replace(this.state.message.charAt(this.state.message.length - 1), ""),
+        msgBody: this.state.message.replace(this.state.message.charAt(this.state.message.length)),
         senderId: this.props.userInfo.userId,
         roomId: this.props.selectedRoomId,
         id: uuidv4()
