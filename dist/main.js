@@ -12722,6 +12722,12 @@ object-assign
           "div",
           { className: r == i.userId ? "msg my-msg" : "msg room-msg" },
           t,
+          /*placeholder for translation icon*/
+          o.a.createElement(
+            "button",
+            { className: "translate" },
+            "hi"
+          ),
           o.a.createElement(
             "span",
             { className: "time-sent" },
