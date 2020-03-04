@@ -12722,7 +12722,7 @@ object-assign
           "div",
           { className: r == i.userId ? "msg my-msg" : "msg room-msg" },
           t,
-          /*placeholder for translation icon*/
+          /*placeholder for translation icon. Replace onclick functionality with api calls*/
           o.a.createElement(
             "button",
             { 
