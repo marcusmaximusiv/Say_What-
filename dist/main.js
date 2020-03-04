@@ -12223,8 +12223,8 @@ object-assign
         return o.a.createElement(
           "div",
           { className: "title" },
-          "Say",
-          o.a.createElement("span", { className: "bold-title" }, "What")
+          "Say ",
+          o.a.createElement("span", { className: "bold-title" }, "What!?")
         );
       },
       u = function() {
@@ -13509,11 +13509,21 @@ object-assign
                   "div",
                   { className: "login-form" },
                   o.a.createElement(
-                    "div",                 
+                    "img",
+                    {
+                     src: "images/logo.png",
+                     className: "login-logo"
+                  }
+                ),
+                o.a.createElement(
+                    "br"
+                ),
+                  o.a.createElement(
+                    "text",
                     { className: "login-title" },
                     "Login"
                   ),
-                  1 == t ? o.a.createElement(ne, { message: i }) : "",
+                                 1 == t ? o.a.createElement(ne, { message: i }) : "",
                   1 == r
                     ? o.a.createElement(w, null)
                     : 0 == n

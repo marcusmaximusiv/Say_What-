@@ -17,6 +17,11 @@ html {
     font-size: 10px;
   }
 }
+.login-logo{
+  height:150px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
 
 .container {
   display: grid;
