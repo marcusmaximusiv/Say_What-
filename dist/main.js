@@ -1,3 +1,8 @@
+function translate(){
+  axios.get('https://api.github.com/users/mapbox').then((response)=>
+  console.log(response.data)
+  )}
+
 !(function(e) {
   var t = {};
   function n(r) {
@@ -12225,7 +12230,7 @@ object-assign
           { className: "title" },
           "Say ",
           o.a.createElement("span", { className: "bold-title" }, "What!?")
-        );
+          );
       },
       u = function() {
         return o.a.createElement(
@@ -12728,10 +12733,17 @@ object-assign
             { 
             href: "#",
             className: "translate",
-            onClick: function() {
-                //do google translate here
-                location.reload();
-              } },
+            onClick: 
+            async function (){
+              translate.engine = 'google';
+              translate.key = 'AIzaSyCOb5YHtdYvnk3ufij-soP565Fbb_qft6s';
+              const text= await translate(e.msgBody, 'es');
+              console.log(text);
+              var translated = text;
+              console.log(translated);
+              app.querySelector("msg.my-msg").update(translated);
+            }
+              },
             "translate"
           ),
           o.a.createElement(

@@ -39,6 +39,7 @@ class App extends Component {
     })
   }
 
+
   // when error occurred in some lower components
   componentDidCatch() {
     alert('Some Error occurred...!!')
