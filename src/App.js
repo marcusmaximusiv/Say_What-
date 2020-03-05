@@ -9,7 +9,6 @@ import Login from './components/login/Login';
 // css
 import './css/style.css'
 
-
 class App extends Component {
   // static propTypes = {
   //   className: PropTypes.string,

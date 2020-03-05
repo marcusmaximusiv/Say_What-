@@ -12734,14 +12734,16 @@ object-assign
             href: "#",
             className: "translate",
             onClick: 
-            async function (){
+            async function (translated){
+              var html = document.querySelectorAll("msg.my-msg").innerHTML;
               translate.engine = 'google';
-              translate.key = 'AIzaSyCOb5YHtdYvnk3ufij-soP565Fbb_qft6s';
+              translate.key = 'AIzaSyCOb5YHtdYvnk3ufij-soP565Fbb_qft6s'; 
               const text= await translate(e.msgBody, 'es');
               console.log(text);
               var translated = text;
               console.log(translated);
-              app.querySelector("msg.my-msg").update(translated);
+              var translation = " " + translated + "";;
+              document.getElementsByClassName("msg my-msg").innerHTML = html.appendChild(translation);
             }
               },
             "translate"
