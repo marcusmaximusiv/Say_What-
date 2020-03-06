@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "dev": "webpack --mode development"
+    "dev": "webpack --mode development",
+    "start": "cd server && node server.js"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "express": "^4.17.1",
     "mongodb": "^3.1.10",
     "morgan": "^1.9.1",
+    "node": "^13.9.0",
     "react-scripts": "^3.4.0",
     "socket.io": "^2.1.1",
     "translate": "^1.1.1"
