@@ -12742,8 +12742,9 @@ object-assign
               console.log(text);
               var translated = text;
               console.log(translated);
-              var translation = " " + translated + "";;
-              document.getElementsByClassName("msg my-msg").innerHTML = html.appendChild(translation);
+              var translation = " " + translated + "";
+              console.log(translation);
+              document.getElementsByClassName("msg my-msg").innerHTML = translation;
             }
               },
             "translate"
