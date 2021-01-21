@@ -43,7 +43,7 @@
     "morgan": "^1.9.1",
     "node": "^13.9.0",
     "react-scripts": "^3.4.0",
-    "socket.io": "^2.1.1",
+    "socket.io": "^2.4.0",
     "translate": "^1.1.1"
   }
 }
